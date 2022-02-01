@@ -1,0 +1,234 @@
+
+.header {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+
+  &__wrapper {
+    max-width: 1440px;
+    width: 100%;
+    padding: 25px 27px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    position: fixed;
+    z-index: 1;
+    @include large {
+      padding: 39px 49px;
+      z-index: 10;
+    }
+  }
+}
+
+.nav {
+  display: none;
+  @include large {
+    display: block;
+    margin-left: auto;
+    margin-right: 100px;
+    &__menu {
+      list-style: none;
+      display: flex;
+
+      &-item {
+        padding: 0 30px;
+      }
+    }
+  }
+
+
+}
+
+.item-link {
+  color: #fff;
+  position: relative;
+  transition: all .4s;
+
+  &:hover {
+
+
+    & span {
+      opacity: 0;
+      transition: all .4s;
+      transform: translateY(-100%);
+    }
+  }
+
+  & span {
+
+    transform: translateY(100%);
+  }
+
+  &::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(100%);
+    transition: all .4s;
+    color: $red-color;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+
+
+}
+
+.sidenav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  @include Risque;
+  color: #fff;
+  font-size: 32px;
+  transition: visibility 0.3s linear 0.3s, opacity 1s;
+  z-index: -1;
+
+  &.active {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 122px);
+    top: 122px;
+    left: 0;
+    width: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 3s linear 3s, opacity 2s linear .7s;
+    z-index: 8;
+    @include medium {
+      justify-content: flex-end;
+      padding-right: 300px;
+      align-items: flex-start;
+      padding-top: 10%;
+      z-index: 20;
+    }
+
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    &-item {
+      padding-bottom: 34px;
+
+      & a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.burger-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+
+
+  &__circle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    transition-duration: 2s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    text-align: center;
+    background: $red-color;
+    color: white;
+    border-radius: 100%;
+    padding: 20px;
+    overflow: hidden;
+
+    &.open {
+      width: 1700px;
+      height: 1700px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    width: 34px;
+    z-index: 1;
+
+    &.active {
+      position: relative;
+
+      & span {
+        height: 0;
+
+        &::before {
+          width: 34px;
+          position: absolute;
+          transform: rotate(-45deg);
+          transition: .2s ease-out;
+        }
+
+        &::after {
+          width: 34px;
+          position: absolute;
+          transform: rotate(45deg);
+          transition: .2s ease-out;
+        }
+      }
+
+
+    }
+
+    & span {
+      width: 100%;
+      height: 3.6px;
+      position: absolute;
+      top: 50%;
+      background-color: #fff;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 3.6px;
+        background-color: #fff;
+        transform: translateY(-9px);
+        transition: .2s ease-out;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 4px;
+        background-color: #fff;
+        transform: translateY(5px);
+        transition: .2s ease-out;
+      }
+    }
+  }
+}
+
+.burger-wrapper {
+  width: 60px;
+  height: 60px;
+  padding: 19px 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: $red-color;
+  border-radius: 100px 0 100px 100px;
+  z-index: 2;
+}

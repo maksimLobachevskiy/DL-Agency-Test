@@ -1,0 +1,12 @@
+@import "normalize";
+@import "partials/variables";
+@import "partials/mixins";
+@import "global";
+@import "./modules/header";
+@import "./modules/intro";
+@import "./modules/present";
+@import "./modules/contacts";
+
+/*
+@import "layout/article";
+@import "modules/typography";*/

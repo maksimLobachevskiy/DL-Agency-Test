@@ -1,0 +1,168 @@
+.present {
+  padding-top: 94px;
+  padding-bottom: 80px;
+  background-image: url("../img/mountains.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+
+  &__desc {
+    @include Risque;
+    font-size: 28px;
+    color: #fff;
+    padding-bottom: 34px;
+    padding-top: 25px;
+    @include large {
+      padding-top: 30px;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    @include large {
+      padding: 12.5rem 82px 0 73px;
+      display: flex;
+    }
+
+  }
+
+  &__selector {
+    @include large {
+      width: 50%;
+    }
+
+  }
+
+  &__content {
+    @include large {
+      width: 60%;
+      padding-right: 30px;
+    }
+  }
+
+  &__title {
+    @include large {
+      padding-right: 10px;
+    }
+  }
+}
+
+
+.present-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  @include large {
+    justify-content: flex-start;
+
+  }
+
+  &__item {
+    width: 111px;
+    height: 111px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: auto;
+    background: #fff;
+    border-radius: 100%;
+    border: 5px solid;
+    cursor: pointer;
+    @include large {
+      width: 150px;
+      height: 150px;
+    }
+
+    &.active {
+      background: none;
+    }
+
+    &:first-child {
+      margin-right: 12px;
+      @include large {
+        margin-right: 1rem;
+      }
+    }
+
+    &:nth-child(2) {
+      margin: 0 24px 0 12px;
+      @include large {
+        margin: 0 2rem 0 1rem;
+      }
+    }
+  }
+
+}
+
+.selected__present {
+  padding: 73px 60px;
+  display: flex;
+  justify-content: center;
+  @include large {
+    width: 50%;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 58px 35px;
+  }
+}
+
+.present__info {
+  display: none;
+
+
+  &.active {
+    display: block;
+    @include large {
+      display: flex;
+    }
+
+  }
+
+  &-title {
+    text-align: center;
+    @include Risque;
+    font-size: 42px;
+    font-weight: 400;
+    @include large {
+      text-align: left;
+
+    }
+  }
+
+  &-desc {
+    font-size: 28px;
+    line-height: 32px;
+    padding-top: 30px;
+  }
+
+  &-img {
+    text-align: center;
+    @include large {
+      width: 40%;
+      order: 1;
+      align-self: center;
+    }
+  }
+}
+
+.img-min {
+  width: 50px;
+  @include large {
+    width: 70px;
+  }
+}
+
+.img-max {
+  height: 150px;
+  @include large {
+    height: 250px;
+  }
+}

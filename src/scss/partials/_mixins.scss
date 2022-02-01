@@ -1,0 +1,19 @@
+@mixin Roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+@mixin Risque {
+  font-family: 'Risque', cursive;
+}
+
+@mixin medium {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}

@@ -1,0 +1,181 @@
+.contacts {
+  padding-top: 94px;
+  background-image: url("../img/contacts-bg.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+
+  &__wrapper {
+    @include large {
+      padding: 11.5rem 161px 10rem 71px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 24px;
+
+    & span {
+      display: block;
+    }
+  }
+
+
+  &__form {
+    padding-top: 30px;
+    padding-bottom: 75px;
+    max-width: 468px;
+
+    & input {
+      display: block;
+      width: 100%;
+      outline: none;
+      border-radius: 15px;
+      padding: 15px 26px;
+      margin-bottom: 23px;
+      background: none;
+      border: 3px solid #fff;
+      font-size: 20px;
+      color: #fff;
+
+      &::placeholder {
+        color: #fff;
+
+      }
+    }
+
+    & textarea {
+      display: block;
+      padding: 15px 26px;
+      width: 100%;
+      background: none;
+      border: 3px solid #fff;
+      font-size: 20px;
+      border-radius: 15px;
+      color: #fff;
+
+      &::placeholder {
+        color: #fff;
+
+      }
+    }
+  }
+}
+
+.row {
+  @include large {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+}
+
+.col {
+  @include large {
+    width: 220px;
+  }
+}
+
+.form-gender {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23px;
+  background: none;
+
+  position: relative;
+
+  &__arrow {
+    vertical-align: bottom;
+  }
+
+  &__options {
+    border-radius: 0 0 15px 15px;
+    padding: 29px 26px 6px 26px;
+    border-right: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: -14px;
+    background-color: #FFFCFC;
+    color: #CECECE;
+
+    & label {
+      cursor: pointer;
+      padding-bottom: 14px;
+
+      &:hover {
+        color: $red-color;
+      }
+    }
+  }
+}
+
+.form-check {
+  height: 0;
+  width: 0;
+
+
+  & + label {
+    display: flex;
+  }
+
+  & + label span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border: 2px solid $red-color;
+    border-radius: 3px;
+    margin-right: 7px;
+
+  }
+
+  &:checked + label {
+
+    & span {
+      background-color: #fff;
+    }
+
+    & span::before {
+      content: "";
+      display: block;
+      background-color: #fff;
+      background-image: url("../img/check-solid.svg");
+      width: 12px;
+      height: 12px;
+      position: absolute;
+    }
+  }
+}
+
+.form-gender > summary {
+  list-style-type: none;
+  background-image: url(../img/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center right 17px;
+  border-radius: 15px;
+  padding: 15px 26px;
+  border: 3px solid #fff;
+  font-size: 20px;
+  position: relative;
+}
+
+.form-gender[open] > summary {
+  background-color: #E5E5E5;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.checkbox-confirm {
+  @include large {
+    color: $red-color;
+  }
+}

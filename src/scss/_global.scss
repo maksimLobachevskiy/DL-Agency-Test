@@ -1,0 +1,59 @@
+body {
+  font-size: 1rem;
+  @include Roboto;
+  line-height: 1.5;
+}
+
+.main {
+  height: 100%;
+  color: #fff;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 27px;
+  margin: 0 auto;
+  @include large {
+    padding: 0;
+    height: 100vh;
+    scroll-snap-align: center;
+  }
+}
+
+.btn {
+  padding: 12px 43px;
+  border: 2px solid #fff;
+  border-radius: 20px 20px 20px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-title {
+  @include Risque;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 60px;
+  @include large {
+    font-size: 56px;
+  }
+}
+
+.scroll-container {
+  @include large {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
+}
+
+canvas#sky {
+  position: absolute;
+}
